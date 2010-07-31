@@ -18,7 +18,8 @@
 - (void) viewDidLoad
 {
 	// Load the content into the view
-	NSString* path = [NSString stringWithFormat: @"%@/%@/OPS/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0], book_.fileName, navigationPoint_.content];
+	NSString* path = [NSString stringWithFormat: @"%@/%@/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0], book_.fileName, navigationPoint_.content];
+	NSLog(@" Opening path %@", path);
 	[webView_ loadRequest: [NSURLRequest requestWithURL: [NSURL fileURLWithPath: path]]];
 }
 

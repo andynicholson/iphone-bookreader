@@ -61,7 +61,10 @@ static Shelf* sSharedShelf = nil;
 	// Create a directory and then unzip it
 
 	NSString* directoryPath = [NSString stringWithFormat: @"%@/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0], identifier];
-	[[NSFileManager defaultManager] createDirectoryAtPath: @"" attributes: nil];
+	//[[NSFileManager defaultManager] createDirectoryAtPath: @"" attributes: nil];
+	[[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:NULL];
+	
+	
 	
 	ZipArchive* za = [ZipArchive new];
 	[za UnzipOpenFile: filePath];
@@ -128,7 +131,8 @@ static Shelf* sSharedShelf = nil;
 	// Parse the navigation definition
 
 	// TODO: We should really take the location of the toc from the OEPBSPackage - For a demo this works
-	NSString* ncxPath = [NSString stringWithFormat: @"%@/%@/OPS/toc.ncx", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0], book.fileName];
+	NSString* ncxPath = [NSString stringWithFormat: @"%@/%@/toc.ncx", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0], book.fileName];
+	NSLog(@" opening file %@" , ncxPath);
 	NSData* ncxData = [NSData dataWithContentsOfFile: ncxPath];
 	
 	XMLDigester* digester = [XMLDigester digesterWithData: ncxData];

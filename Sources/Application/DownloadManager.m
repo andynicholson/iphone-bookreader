@@ -71,6 +71,7 @@ static DownloadManager* sSharedDownloadManager = nil;
 
 	DownloadOperation* downloadOperation = [[[DownloadOperation alloc] initWithDownload: download delegate: self] autorelease];
 	[operationQueue_ addOperation: downloadOperation];
+	
 }
 
 - (void) stopDownload: (Download*) download

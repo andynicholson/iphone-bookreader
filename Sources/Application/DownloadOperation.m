@@ -29,9 +29,23 @@
 
 - (void) start
 {
+	
+	NSLog(@" start downloadoperation %@ iscanncelled? %d", download_.url, [self isCancelled]);
+	
+	//http://www.dribin.org/dave/blog/archives/2009/09/13/snowy_concurrent_operations/
+	//
+	if (![NSThread isMainThread]) { 
+        [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        return;
+    }
+	
+	
 	if (![self isCancelled])
 	{
-		connection_ = [[NSURLConnection connectionWithRequest: [NSURLRequest requestWithURL: download_.url] delegate: self] retain];
+		connection_ = [[NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL: download_.url] delegate: self] retain];
+				
+		
+		NSLog(@" connect is %@", connection_);
 		if (connection_ != nil) {
 			[self willChangeValueForKey:@"isExecuting"];
 			executing_ = YES;
@@ -87,6 +101,8 @@
 
 - (void) connection: (NSURLConnection*) connection didFailWithError: (NSError*) error
 {
+	NSLog(@" didfailwitherror %@", error);
+	
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
 	{
@@ -101,7 +117,9 @@
 
 - (void) connectionDidFinishLoading: (NSURLConnection*) connection
 {
-    [self willChangeValueForKey:@"isFinished"];
+	NSLog(@" didfinishloading ");
+	
+	[self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
 	{
 		finished_ = YES;

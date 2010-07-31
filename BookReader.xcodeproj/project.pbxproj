@@ -10,6 +10,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		4565F387120416A00087F03E /* FM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4565F386120416A00087F03E /* FM.png */; };
+		4565F38B120427000087F03E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4565F38A120427000087F03E /* Default.png */; };
 		F808811D10F6D6DB00CE715C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F808811C10F6D6DB00CE715C /* libz.dylib */; };
 		F808841B10F79C4500CE715C /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F80883B810F79C4400CE715C /* Book.m */; };
 		F808841C10F79C4500CE715C /* BookContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80883BA10F79C4400CE715C /* BookContentViewController.m */; };
@@ -66,9 +68,11 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* BookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* FlossManuals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlossManuals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4565F386120416A00087F03E /* FM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FM.png; sourceTree = "<group>"; };
+		4565F38A120427000087F03E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BookReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BookReader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F808811C10F6D6DB00CE715C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F80883B710F79C4400CE715C /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
@@ -187,7 +191,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* BookReader.app */,
+				1D6058910D05DD3D006BFB54 /* FlossManuals.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +221,8 @@
 		F8087CF210F6564100CE715C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4565F38A120427000087F03E /* Default.png */,
+				4565F386120416A00087F03E /* FM.png */,
 				8D1107310486CEB800E47090 /* BookReader-Info.plist */,
 			);
 			name = Resources;
@@ -368,9 +374,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* BookReader */ = {
+		1D6058900D05DD3D006BFB54 /* FlossManuals */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BookReader" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FlossManuals" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -380,9 +386,9 @@
 			);
 			dependencies = (
 			);
-			name = BookReader;
+			name = FlossManuals;
 			productName = BookReader;
-			productReference = 1D6058910D05DD3D006BFB54 /* BookReader.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* FlossManuals.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -390,6 +396,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Infinite Recursion Pty Ltd";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BookReader" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
@@ -397,7 +406,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* BookReader */,
+				1D6058900D05DD3D006BFB54 /* FlossManuals */,
 			);
 		};
 /* End PBXProject section */
@@ -415,6 +424,8 @@
 				F808842E10F79C4500CE715C /* DownloadTableViewCell.xib in Resources */,
 				F808843010F79C4500CE715C /* MainWindow.xib in Resources */,
 				F808843E10F79C4500CE715C /* ShelfViewController.xib in Resources */,
+				4565F387120416A00087F03E /* FM.png in Resources */,
+				4565F38B120427000087F03E /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +495,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BookReader_Prefix.pch;
 				INFOPLIST_FILE = "BookReader-Info.plist";
-				PRODUCT_NAME = BookReader;
+				PRODUCT_NAME = FlossManuals;
 			};
 			name = Debug;
 		};
@@ -496,9 +507,37 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BookReader_Prefix.pch;
 				INFOPLIST_FILE = "BookReader-Info.plist";
-				PRODUCT_NAME = BookReader;
+				PRODUCT_NAME = FlossManuals;
 			};
 			name = Release;
+		};
+		45087ABE12045A9A003F6CAD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: NAK Factory Pty Ltd.";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				PREBINDING = NO;
+				PRODUCT_NAME = FlossManuals;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1628376F-65AC-4AB7-841F-44CFF2DCA436";
+				SDKROOT = iphoneos4.0;
+			};
+			name = AdHoc;
+		};
+		45087ABF12045A9A003F6CAD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BookReader_Prefix.pch;
+				INFOPLIST_FILE = "BookReader-Info.plist";
+				PRODUCT_NAME = FlossManuals;
+			};
+			name = AdHoc;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -508,8 +547,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				PRODUCT_NAME = FlossManuals;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -521,19 +562,22 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				PRODUCT_NAME = FlossManuals;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BookReader" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FlossManuals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				45087ABF12045A9A003F6CAD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -543,6 +587,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				45087ABE12045A9A003F6CAD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

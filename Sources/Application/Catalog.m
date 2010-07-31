@@ -4,6 +4,9 @@
 #import "CatalogEntry.h"
 #import "Catalog.h"
 
+
+#define CATALOG_URL @"http://lumi.infiniterecursion.com.au/ebooks/books.json"
+
 #pragma mark -
 
 static NSInteger SortCatalogEntriesByTitle(CatalogEntry* a, CatalogEntry* b, void* context)
@@ -55,9 +58,11 @@ static Catalog* sSharedCatalog = nil;
 
 - (void) reload
 {
+	NSLog(@"About to start reloading ...");
 	if (connection_ == nil)
 	{
-		NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString: @"http://stefan.arentz.ca/stuff/books.json"]
+		NSLog(@"Connection is nil - so really about to start reloading ...");	
+		NSURLRequest* request = [NSURLRequest requestWithURL: [NSURL URLWithString:CATALOG_URL ]
 			cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 30.0];
 		connection_ = [[NSURLConnection connectionWithRequest: request delegate: self] retain];
 	}
@@ -89,6 +94,8 @@ static Catalog* sSharedCatalog = nil;
 - (void) connectionDidFinishLoading: (NSURLConnection*) connection
 {
 	// Parse the JSON and store it into the Catalog
+	
+	NSLog(@"Reloading Catalog data");
 	
 	NSString* json = [[[NSString alloc] initWithData: json_ encoding: NSUTF8StringEncoding] autorelease];
 	NSArray* entries = [json JSONValue];
